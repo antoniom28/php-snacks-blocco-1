@@ -9,16 +9,13 @@ $user = [
 $result = inputControl($user); 
 
 function inputControl($user){
-    if(strlen($user[name]) > 3)
-        if (str_contains($user[mail] ,'@'))
-            if(str_contains($user[mail] ,'.'))
-                return "login successful, hi ".$user[name]."!!";
-            else
-                return "access denied, need .esample for a Mail";
+    if(strlen($user[name]) > 3 && $user[age] >= 14)
+        if(filter_var($user[mail], FILTER_VALIDATE_EMAIL))
+            return "login successful, hi ".$user[name].$user[age]."!!";
         else
-            return "access denied, need @ for a Mail";
+            return "access denied, need @something and .example for a Mail";
     else
-        return "access denied, the name requires 4 or more characters";
+        return "access denied, the name requires 4 or more characters or you're too young";
 }
 
 /*ho letto che str_contains è per la versione 8 di php, e che 
