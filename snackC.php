@@ -1,5 +1,15 @@
 <?php
+/*Creare un array con 15 numeri casuali, tenendo conto 
+che l’array non dovrà contenere lo stesso numero più di
+ una volta*/
 
+$numbers = [];
+
+while(count($numbers) < 15){
+    $randomTemp = rand(1,20);
+    if(!in_array($randomTemp , $numbers))
+        $numbers[] = $randomTemp;
+}
 
 ?>
 
@@ -12,6 +22,10 @@
     <title>Document</title>
 </head>
 <body>
-    ciao1
+    <p> 
+        <?php 
+            echo '<pre>'; print_r($numbers); echo '</pre>'; 
+        ?> 
+    </p>
 </body>
 </html>
