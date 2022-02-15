@@ -54,11 +54,9 @@ $all_game[] =
     <title>Document</title>
 </head>
 <body>
-    <p> 
-        <?php 
-            for($i=0; $i<count($all_game); $i++) 
-                echo '<p>' . $all_game[$i] .'</p>'; 
-        ?> 
-    </p>
+    <?php 
+        for($i=0; $i<count($all_game); $i++) 
+            echo '<p>' . $all_game[$i] .'</p>'; 
+    ?> 
 </body>
 </html>
